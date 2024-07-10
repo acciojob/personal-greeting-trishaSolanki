@@ -1,16 +1,16 @@
 
-import React from "react";
-import './../styles/App.css';
+const [name,setName]=useState("")
 
-const App = () => {
-  const[name,setName] = useState('');
+  function handleChange(e){
+    setName("Hello "+ e.target.value + "!");
+  }
+
   return (
-    <div>
-        <h1>Enter your name :</h1>
-      <input type='text' value={name} onChange={(e)=>setName(e.target.value)}/>
-      {name && <h1>Hello, {name}!</h1>}
+<div>
+        {/* Do not remove the main div */}
+        <label>Enter your name: </label>
+        <input type="name" placeholder="name"onChange={handleChange}/>
+        <p>{name}</p>
     </div>
   )
 }
-
-export default App;
